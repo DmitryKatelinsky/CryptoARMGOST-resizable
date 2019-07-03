@@ -4,7 +4,7 @@ import { TMP_DIR } from "../../constants";
 import * as signs from "../../trusted/sign";
 import { fileExists } from "../../utils";
 import FileIcon from "./FileIcon";
-
+console.log("true");
 const shell = window.electron.shell;
 const dialog = window.electron.remote.dialog;
 

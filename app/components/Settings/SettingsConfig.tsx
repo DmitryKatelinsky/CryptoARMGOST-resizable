@@ -276,7 +276,7 @@ class SettingsWindow extends React.Component<any, ISettingsWindowState> {
     const { settings } = this.state;
     // tslint:disable-next-line:no-shadowed-variable
     const { applySettings } = this.props;
-
+console.log(settings)
     applySettings(settings);
 
     this.props.history.goBack();
@@ -338,11 +338,15 @@ class SettingsWindow extends React.Component<any, ISettingsWindowState> {
 
   handleSaveToDocumentsClick = () => {
     const { settings } = this.state;
-
+    const directory = settings.saveToDocuments ? DEFAULT_DOCUMENTS_PATH : settings.outfolder
     this.setState({
       settings: settings
+        .setIn(["outfolder"], directory)
         .setIn(["saveToDocuments"], !settings.saveToDocuments),
+
+
     });
+
   }
 
   handleEncodingChange = (encoding: string) => {

@@ -40,13 +40,16 @@ export function applySettings(settings: any) {
     type: APPLY_SETTINGS,
   };
 }
-
+console.log("true");
 export function toggleSaveToDocuments(saveToDocuments: boolean) {
+
   return (dispatch: (action: {}) => void) => {
     if (saveToDocuments) {
+
       dispatch(changeSignatureOutfolder(DEFAULT_DOCUMENTS_PATH));
       dispatch(changeEncryptOutfolder(DEFAULT_DOCUMENTS_PATH));
     } else {
+
       dispatch(changeSignatureOutfolder(""));
       dispatch(changeEncryptOutfolder(""));
     }

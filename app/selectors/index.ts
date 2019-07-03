@@ -100,7 +100,7 @@ export const filteredContainersSelector = createSelector(containersGetter, filte
       );
     }
     catch(e){
-return true
+      return true
     }
 
   });
